@@ -13,4 +13,6 @@ urlpatterns = [
  
     path("employees/delete/<int:id>/", views.delete_employee, name="delete_employee"),
  
+    path("upload/", views.upload_excel, name="upload_excel"),
+ 
 ]
