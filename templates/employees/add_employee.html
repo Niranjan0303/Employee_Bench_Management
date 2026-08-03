@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+ 
+{% block title %}Add Employee{% endblock %}
+ 
+{% block content %}
+ 
+<div class="container mt-4">
+ 
+    <div class="card shadow">
+ 
+        <div class="card-header bg-primary text-white">
+ 
+            <h4>Add Employee</h4>
+ 
+        </div>
+ 
+        <div class="card-body">
+ 
+            <form method="POST">
+ 
+                {% csrf_token %}
+ 
+                {{ form.as_p }}
+ 
+                <button type="submit"
+                        class="btn btn-success">
+ 
+                    Save Employee
+ 
+                </button>
+ 
+                <a href="/employees/"
+                   class="btn btn-secondary">
+ 
+                    Cancel
+ 
+                </a>
+ 
+            </form>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}
+ 

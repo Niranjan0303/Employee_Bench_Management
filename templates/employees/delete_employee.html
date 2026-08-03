@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+ 
+{% block title %}Delete Employee{% endblock %}
+ 
+{% block content %}
+ 
+<div class="container mt-5">
+ 
+    <div class="card shadow">
+ 
+        <div class="card-header bg-danger text-white">
+ 
+            <h4>Delete Employee</h4>
+ 
+        </div>
+ 
+        <div class="card-body">
+ 
+            <h5>
+ 
+                Are you sure you want to delete
+ 
+                <strong>{{ employee.employee_name }}</strong> ?
+ 
+            </h5>
+ 
+            <br>
+ 
+            <form method="POST">
+ 
+                {% csrf_token %}
+ 
+                <button class="btn btn-danger">
+                    Yes, Delete
+                </button>
+ 
+                <a href="/employees/" class="btn btn-secondary">
+                    Cancel
+                </a>
+ 
+            </form>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}
+ 

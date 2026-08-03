@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+ 
+{% block title %}Dashboard{% endblock %}
+ 
+{% block content %}
+ 
+<div class="container mt-4">
+ 
+    <h2 class="mb-4">Dashboard</h2>
+ 
+    <div class="row">
+ 
+        <div class="col-md-3">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h2>{{ total_employees }}</h2>
+                    <p>Total Employees</p>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-md-3">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h2>{{ total_customers }}</h2>
+                    <p>Customers</p>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-md-3">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h2>{{ profiles_shared }}</h2>
+                    <p>Profiles Shared</p>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-md-3">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h2>{{ rejected }}</h2>
+                    <p>Rejected</p>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+ 
+    <div class="card shadow mt-5">
+ 
+        <div class="card-header bg-primary text-white">
+            Recent Employees
+        </div>
+ 
+        <div class="card-body">
+ 
+            <table class="table table-striped">
+ 
+                <thead>
+ 
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Skill</th>
+                        <th>Status</th>
+                    </tr>
+ 
+                </thead>
+ 
+                <tbody>
+ 
+                {% for employee in employees %}
+ 
+                <tr>
+ 
+                    <td>{{ employee.employee_id }}</td>
+                    <td>{{ employee.employee_name }}</td>
+                    <td>{{ employee.primary_skill }}</td>
+                    <td>{{ employee.profile_status }}</td>
+ 
+                </tr>
+ 
+                {% empty %}
+ 
+                <tr>
+                    <td colspan="4" class="text-center">
+                        No Employees Found
+                    </td>
+                </tr>
+ 
+                {% endfor %}
+ 
+                </tbody>
+ 
+            </table>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}

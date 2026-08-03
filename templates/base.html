@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Employee Bench Management{% endblock %}</title>
+ 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+ 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+ 
+<body style="background:#f5f7fb;">
+ 
+<!-- ================= NAVBAR ================= -->
+ 
+<nav class="navbar navbar-dark" style="background:#0b4f8a;">
+    <div class="container-fluid">
+ 
+        <a class="navbar-brand fw-bold" href="#">
+            Employee Bench Management
+        </a>
+ 
+        <div>
+ 
+            <button class="btn btn-light btn-sm me-2">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Login
+            </button>
+ 
+            <button class="btn btn-outline-light btn-sm">
+                <i class="bi bi-person-plus-fill"></i>
+                Sign Up
+            </button>
+ 
+        </div>
+ 
+    </div>
+</nav>
+ 
+<!-- ================= BODY ================= -->
+ 
+<div class="container-fluid">
+ 
+    <div class="row">
+ 
+        <!-- Sidebar -->
+ 
+        <div class="col-md-2 p-0">
+ 
+            <div class="bg-primary text-white vh-100">
+ 
+                <h5 class="text-center py-4 border-bottom">
+ 
+                    Employee Tracker
+ 
+                </h5>
+ 
+                <div class="list-group rounded-0">
+ 
+                    <a href="#"
+                       class="list-group-item list-group-item-action">
+ 
+                        <i class="bi bi-speedometer2"></i>
+ 
+                        Dashboard
+ 
+                    </a>
+ 
+                    <a href="#"
+                       class="list-group-item list-group-item-action">
+ 
+                        <i class="bi bi-people-fill"></i>
+ 
+                        Employees
+ 
+                    </a>
+ 
+                    <a href="#"
+                       class="list-group-item list-group-item-action">
+ 
+                        <i class="bi bi-person-plus-fill"></i>
+ 
+                        Add Employee
+ 
+                    </a>
+ 
+                    <a href="#"
+                       class="list-group-item list-group-item-action">
+ 
+                        <i class="bi bi-pencil-square"></i>
+ 
+                        Edit Employee
+ 
+                    </a>
+ 
+                    <a href="#"
+                       class="list-group-item list-group-item-action">
+ 
+                        <i class="bi bi-upload"></i>
+ 
+                        Upload Excel
+ 
+                    </a>
+ 
+                    <a href="#"
+                       class="list-group-item list-group-item-action">
+ 
+                        <i class="bi bi-shield-lock-fill"></i>
+ 
+                        Django Admin
+ 
+                    </a>
+ 
+                </div>
+ 
+            </div>
+ 
+        </div>
+ 
+        <!-- Main Content -->
+ 
+        <div class="col-md-10">
+ 
+            <div class="p-4">
+ 
+                {% block content %}
+ 
+                <div class="card shadow">
+ 
+                    <div class="card-body">
+ 
+                        <h2 class="text-primary">
+ 
+                            Welcome to Employee Bench Management
+ 
+                        </h2>
+ 
+                        <hr>
+ 
+                        <div class="row mt-4">
+ 
+                            <div class="col-md-3">
+ 
+                                <div class="card border-primary shadow-sm">
+ 
+                                    <div class="card-body text-center">
+ 
+                                        <h3>28</h3>
+ 
+                                        <p>Total Employees</p>
+ 
+                                    </div>
+ 
+                                </div>
+ 
+                            </div>
+ 
+                            <div class="col-md-3">
+ 
+                                <div class="card border-success shadow-sm">
+ 
+                                    <div class="card-body text-center">
+ 
+                                        <h3>8</h3>
+ 
+                                        <p>Customers</p>
+ 
+                                    </div>
+ 
+                                </div>
+ 
+                            </div>
+ 
+                            <div class="col-md-3">
+ 
+                                <div class="card border-warning shadow-sm">
+ 
+                                    <div class="card-body text-center">
+ 
+                                        <h3>14</h3>
+ 
+                                        <p>Profiles Shared</p>
+ 
+                                    </div>
+ 
+                                </div>
+ 
+                            </div>
+ 
+                            <div class="col-md-3">
+ 
+                                <div class="card border-danger shadow-sm">
+ 
+                                    <div class="card-body text-center">
+ 
+                                        <h3>3</h3>
+ 
+                                        <p>Rejected</p>
+ 
+                                    </div>
+ 
+                                </div>
+ 
+                            </div>
+ 
+                        </div>
+ 
+                    </div>
+ 
+                </div>
+ 
+                {% endblock %}
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+<!-- Bootstrap JS -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</body>
+</html>
