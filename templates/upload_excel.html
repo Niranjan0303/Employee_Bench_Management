@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+ 
+{% block title %}Upload Excel{% endblock %}
+ 
+{% block content %}
+ 
+<div class="container-fluid">
+ 
+    <div class="card shadow">
+ 
+        <div class="card-header bg-primary text-white">
+ 
+            <h4 class="mb-0">
+ 
+                <i class="bi bi-upload"></i>
+ 
+                Upload Employee Excel
+ 
+            </h4>
+ 
+        </div>
+ 
+        <div class="card-body">
+ 
+            <form method="POST" enctype="multipart/form-data">
+ 
+                {% csrf_token %}
+ 
+                <div class="mb-3">
+ 
+                    <label class="form-label">
+ 
+                        Select Excel File (.xlsx)
+ 
+                    </label>
+ 
+                    <input type="file"
+                           name="excel_file"
+                           class="form-control"
+                           accept=".xlsx"
+                           required>
+ 
+                </div>
+ 
+                <button type="submit"
+                        class="btn btn-primary">
+ 
+                    <i class="bi bi-upload"></i>
+ 
+                    Upload
+ 
+                </button>
+ 
+                <a href="{% url 'dashboard' %}"
+                   class="btn btn-secondary">
+ 
+                    <i class="bi bi-arrow-left-circle"></i>
+ 
+                    Cancel
+ 
+                </a>
+ 
+            </form>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}
